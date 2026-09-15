@@ -1,0 +1,81 @@
+---
+title: "agricultural land use change analysis"
+format: html
+editor: visual
+---
+
+## Running Code
+
+**Load Libraries**
+
+```{r}
+library(sf)
+library(tidyverse)
+library(here)
+library(mapview)
+```
+
+**Read in data**
+
+```{r}
+ag_2015 <- st_read(
+  here("data", "Agricultural_Land_Use_-_2015_Baseline.geojson")
+)
+```
+
+**Read in data**
+
+```{r}
+ag_2020 <- st_read(
+  here("data","Agricultural_Land_Use_-_2020_Update.geojson" )
+)
+```
+
+**Make a map**
+
+```{r}
+mapview(ag_2015, zcol = "cropcatego")
+```
+
+```{r}
+unique(ag_2015$cropcatego)
+```
+
+R color brewer can enhance this
+
+Distribution of Acreage
+
+```{r}
+ggplot(ag_2015, aes(x = acreage)) +
+  geom_histogram() +
+  theme_bw() +
+  facet_wrap(~island, scales = "free_y")
+```
+
+**Questions:**
+
+How have things changed, has acreage changed from Ag Land from 2015-2020?
+
+Did we add/loose ag land acreage between 2015 and 2020?
+
+```{r}
+sum(ag_2015$acreage)
+sum(ag_2020$acreage)
+```
+
+```{r}
+sum_2015_acreage <- sum(ag_2015$acreage)
+sum_2020_acreage <- sum(ag_2020$acreage)
+```
+
+What has that land been converted to?
+
+one map of lost ag land between 2015 and 2020?
+
+ag land ownership
+
+By what crop?
+
+NDVI in lost ag land
+
+soil type
