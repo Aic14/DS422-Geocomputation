@@ -44,6 +44,8 @@ What methods will you actually run? For example, image segmentation, spatial sta
 
 ------------------------------------------------------------------------
 
+need guidance!
+
 ## 4. 3-5 peer-reviewed publications or news articles surrounding my research question
 
 Give the link below. Add a sentence or two on why each source is relevant to your project.
