@@ -44,7 +44,7 @@ What methods will you actually run? For example, image segmentation, spatial sta
 
 ------------------------------------------------------------------------
 
-need guidance!
+need guidance!!
 
 ## 4. 3-5 peer-reviewed publications or news articles surrounding my research question
 
